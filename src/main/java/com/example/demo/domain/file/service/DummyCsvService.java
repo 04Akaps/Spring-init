@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class DummyCsvService {
     private final DummyCsvRepository dummyCsvRepository;
 
-    private AtomicInteger test = new AtomicInteger(0);
+    private final AtomicInteger test = new AtomicInteger(0);
 
     @Transactional()
     public void saveAllDummyCsvList(List<DummyCsv> dummyCsvList) {

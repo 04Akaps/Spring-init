@@ -17,4 +17,5 @@ public class CustomException extends RuntimeException {
         codeInterface.setMessage(" : "+ additionalMessage);
         this.codeInterface = codeInterface;
     }
+
 }
