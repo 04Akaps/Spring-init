@@ -45,10 +45,6 @@ public class GlobalExceptionHandler {
         String errorMessage = codeInterface.getMessage();
         Integer errorCode = codeInterface.getCode();
 
-        System.out.println("errorCode : " + errorCode);
-        System.out.println("errorMessage : " + errorMessage);
-
-
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(Response.error(errorCode, errorMessage));

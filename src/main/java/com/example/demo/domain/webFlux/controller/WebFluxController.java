@@ -3,9 +3,14 @@ package com.example.demo.domain.webFlux.controller;
 import com.example.demo.common.exception.CustomException;
 import com.example.demo.common.exception.ErrorCode;
 import com.example.demo.domain.exception.Response;
+import com.example.demo.domain.webFlux.model.ProductResponse;
+import com.example.demo.domain.webFlux.service.WebFluxService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
@@ -14,9 +19,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping("/api/v1/webflux")
+@RequiredArgsConstructor
 public class WebFluxController {
 
     private final AtomicInteger test = new AtomicInteger(0);
+    private final WebFluxService webFluxService;
 
     @GetMapping("/process-event")
     public Mono<Response<String>> processPayment() {
@@ -72,5 +79,11 @@ public class WebFluxController {
                     return Response.success(paymentResult + ", " + fraudResult + ", " + notificationResult);
                 });
 
+    }
+
+
+    @GetMapping("/call-http")
+    public Response<ProductResponse> callHttp(@RequestParam @Valid String url) {
+        return webFluxService.CallHTTP(url);
     }
 }

@@ -29,6 +29,7 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.List;
+import java.util.function.Function;
 
 @Configuration
 @EnableBatchProcessing
