@@ -7,7 +7,6 @@ import com.example.demo.domain.webFlux.model.ProductResponse;
 import com.example.demo.domain.webFlux.service.WebFluxService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +15,8 @@ import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import com.example.demo.aspects.annotaion.TokenVerifyAspectInterface;
+
 
 @RestController
 @RequestMapping("/api/v1/webflux")
@@ -85,5 +86,12 @@ public class WebFluxController {
     @GetMapping("/call-http")
     public Response<ProductResponse> callHttp(@RequestParam @Valid String url) {
         return webFluxService.CallHTTP(url);
+    }
+
+
+    @TokenVerifyAspectInterface
+    @GetMapping("/aspect-check")
+    public void aspectCheck() {
+        System.out.println("여기 들어온다.");
     }
 }

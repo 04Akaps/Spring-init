@@ -21,6 +21,7 @@ dependencies {
 
 	// web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
@@ -47,6 +48,13 @@ dependencies {
 
 	// batch
 	implementation 'org.springframework.boot:spring-boot-starter-batch'
+
+	// aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+	// jackson 직렬화 모듈
+	implementation 'com.fasterxml.jackson.module:jackson-module-afterburner'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
