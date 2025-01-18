@@ -14,6 +14,10 @@ public enum ErrorCode implements  CodeInterface {
     FailedToMongoTest(3, "mono test failed"),
     FailedToCallHTTP(4, "failed to call http"),
     NotSupportedOrderRequest(5, "order request failed"),
+    FailedToFindMongoTemplate(6, "failed to find mongo template"),
+
+    OverLimit(7, "over limit request"),
+
 
     FailedToReadFile(101, "Failed to read file"),
     FailedToReadStream(100, "Failed to read stream");

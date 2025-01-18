@@ -12,7 +12,7 @@ public class CustomException extends RuntimeException {
         this.codeInterface = codeInterface;
     }
 
-    public CustomException(CodeInterface codeInterface, String additionalMessage) {
+    public CustomException(CodeInterface codeInterface, Object additionalMessage) {
         super(codeInterface.getMessage());
         codeInterface.setMessage(" : "+ additionalMessage);
         this.codeInterface = codeInterface;

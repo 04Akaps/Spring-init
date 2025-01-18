@@ -18,6 +18,8 @@ repositories {
 }
 
 dependencies {
+	// mongo
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
 	// web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
