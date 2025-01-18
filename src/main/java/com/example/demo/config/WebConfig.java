@@ -1,7 +1,7 @@
 package com.example.demo.config;
 
 
-import com.example.demo.custom.PageCustom;
+import com.example.demo.custom.WebRequestCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -12,10 +12,10 @@ import java.util.List;
 @Configuration
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
-    private final PageCustom pageCustom;
+    private final WebRequestCustom webRequestCustom;
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
-        resolvers.add(pageCustom);
+        resolvers.add(webRequestCustom);
     }
 }
