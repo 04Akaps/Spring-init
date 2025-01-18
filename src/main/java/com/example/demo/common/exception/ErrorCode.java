@@ -13,6 +13,7 @@ public enum ErrorCode implements  CodeInterface {
     FailedToDoSingleFlight(2, "server internal error"),
     FailedToMongoTest(3, "mono test failed"),
     FailedToCallHTTP(4, "failed to call http"),
+    NotSupportedOrderRequest(5, "order request failed"),
 
     FailedToReadFile(101, "Failed to read file"),
     FailedToReadStream(100, "Failed to read stream");
